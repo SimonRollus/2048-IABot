@@ -1,8 +1,9 @@
 function displayMatrix(array2d) {
     var textDisplay = "";
     for (var r = 0; r < array2d.length; r++) {
-        for (var c = 0; r < array2d[r].length; c++) {
-            textDisplay += array2d[r][c]; 
+        for (var c = 0; c < array2d[r].length; c++) {
+            textDisplay += "  ";
+            textDisplay += array2d[r][c];
         }  
         textDisplay += "\r";
     }
@@ -21,7 +22,7 @@ function Brain(delayAction) {
             this.movement(decision); 
             sleep(delayAction);
         }
-        //alert(displayMatrix(this.capture()));
+        alert(displayMatrix(this.capture()));
     }
 
     this.think = function () {
