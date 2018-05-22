@@ -1,3 +1,14 @@
+function displayMatrix(array2d) {
+    var textDisplay = "";
+    for (var r = 0; r < array2d.length; r++) {
+        for (var c = 0; r < array2d[r].length; c++) {
+            textDisplay += array2d[r][c]; 
+        }  
+        textDisplay += "\r";
+    }
+    return textDisplay;
+}
+
 function Brain(delayAction) {
     this.result = {pattern: [], score: 0};
     this.delayAction = delayAction;
@@ -10,6 +21,7 @@ function Brain(delayAction) {
             this.movement(decision); 
             sleep(delayAction);
         }
+        //alert(displayMatrix(this.capture()));
     }
 
     this.think = function () {
@@ -67,7 +79,7 @@ function setupParents(numberOfParents) {
 
 function bot() {
     console.log("Running");
-    all_bots = setupParents(10);
+    all_bots = setupParents(5);
     for (var bot in all_bots) {
         console.log("The bot " + bot + " is now playing");
         all_bots[bot].action();
